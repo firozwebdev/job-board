@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\JobPost;
 use Illuminate\Database\Seeder;
+use Database\Seeders\JobPostSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,9 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+       // Create 10 users
+        User::factory(10)->create();
+
+        // Create 30 job posts
+        JobPost::factory(30)->create();
     }
 }

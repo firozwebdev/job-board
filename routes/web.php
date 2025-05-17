@@ -1,8 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\JobList;
 
 Route::view('/', 'welcome');
+
+Route::get('/jobs', JobList::class)->name('jobs.index');
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
